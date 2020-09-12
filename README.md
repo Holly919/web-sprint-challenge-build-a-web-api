@@ -61,10 +61,52 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
-1. Understand and explain the use of Middleware?
-1. The basic principles of the REST architectural style.
-1. Understand and explain the use of Express Routers.
-1. Describe tooling used to manually test the correctness of an API.
+*Node.js is a runtime environment (a program that runs other programs), a platform used to execute JavaScript applications outside the browser.
+This opens up a new world of possibilities for JavaScript developers. We can now use JavaScript to write command line utilities, native programs that run on different operating systems, networking software, web services, web applications and more.
+Some of the advantages of using Node.js for writing server side code are:
+-JavaScript on the server: use the same programming language and paradigm for both client and server. This minimizes context switching and makes it easy to share code between the client and the server.
+-Single-threaded: removes the complexity involved in handling multiple threads.
+-Asynchronous: can take full advantage of the processor it’s running on. This matters because the node process will be running on a single CPU.
+-Npm repository: access the largest ecosystem of useful libraries (most of them free to use) in the form of npm modules.
+
+Express is a light and unopinionated framework that sits on top of Node.js and makes it easier to create web applications and services. Sending an HTML file or image is now a one-line task with the sendFile helper method in Express. Ultimately, Express is just a Node.js module like any other module.
+With Express we can:
+-build web applications.
+-serve Single Page Applications (SPAs).
+-build RESTful web services that work with JSON.
+-serve static content, like HTML files, images, audio files, PDFs, and more.
+-power real-time applications using technologies like Web Sockets or WebRTC.
+
+2. Understand and explain the use of Middleware?
+*Middleware provides a way to extend the features provided by the Express framework.
+They are implemented as small functions that handle one aspect of our application. Tasks like authentication and logging are commonly handled by middleware. Another benefit of Middleware is that it provides an easy way to add modularity to our code.
+
+3. The basic principles of the REST architectural style.
+-everything is a resource.
+-each resource is accessible via a unique URI.
+-resources can have multiple representations.
+-communication happens over a stateless protocol (HTTP).
+-resource management happens via HTTP methods.
+
+
+4. Understand and explain the use of Express Routers.
+*Routing refers to determining how an application responds to a client request to a particular endpoint, which is a URI (or path) and a specific HTTP request method (GET, POST, and so on).
+Each route can have one or more handler functions, which are executed when the route is matched.
+Route definition takes the following structure:
+app.METHOD(PATH, HANDLER)
+Where:
+app is an instance of express.
+METHOD is an HTTP request method, in lowercase.
+PATH is a path on the server.
+HANDLER is the function executed when the route is matched.
+
+5. Describe tooling used to manually test the correctness of an API.
+*Postman is an HTTP client that can be used to customize HTTP requests to HTTP servers (such as API servers, or even just plain old web servers).
+Postman is very handy for API developers, because it allows you to issue HTTP requests to your API to test it. Browsers only send HTTP GET requests, so they are not a great tool for testing POST, PUT, DELETE, and other methods. 
+When you issue POST and PUT requests with Postman, you need to include a body with the request. And for Express, the body needs to be in stringified json format.
+The express.json() parser will take the stringified json body and convert it into a real json object, and save it to req.body.
+
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
